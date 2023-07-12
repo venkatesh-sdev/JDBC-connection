@@ -1,0 +1,23 @@
+package dbconnect;
+import java.sql.*;
+
+public class main {
+	public static void main(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+		Connection con = null;
+		try
+		{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ATM","root","pavi");
+					
+		}
+		catch(ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		
+		if(con!=null)
+			System.out.println("Connection Successfull!!");
+		else
+			System.out.println("Connection Failed!!");
+	}}
